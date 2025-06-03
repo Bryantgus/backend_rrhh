@@ -2,50 +2,50 @@ title: Crear un API para manejar un sistema de RRHH donde puedas tener horas pag
 
 #Endpoint para empleado
 • (get) /employees✅
--> obtener todos los empleados registrados✅
+-> obtener todos los empleados registrados
 
 • (get) /employee/:id✅
--> obtener un empleado enviando el id✅
+-> obtener un empleado enviando el id
 
 • (get) /employee/:id/hours✅
--> obtiene todas las horas trabajadas por un empleado, enviando el id✅
+-> obtiene todas las horas trabajadas por un empleado, enviando el id
 
 • (get) /employee/:id/salary✅
 ->  obtiene el salario a pagar basandose en el total de 
-horas por el precio de hora del empleado✅
+horas por el precio de hora del empleado
 
 • (post) /employee✅
--> agrega un empleado nuevo✅
+-> agrega un empleado nuevo
 
 • (post) /employee/:id/hours✅
--> agrega un registro nuevo de horas usando el id del empleado para asociar las horas✅
+-> agrega un registro nuevo de horas usando el id del empleado para asociar las horas
 
 • (put) /employee/:id✅
--> actualiza la informacion del empleado (solo el fullname y pricePerhours)✅
+-> actualiza la informacion del empleado (solo el fullname y pricePerhours)
 
-• (delete) /employee/:id (ojo)
+• (delete) /employee/:id (ojo)✅
 -> borra un empleado y todo el registro de las horas trabajadas
 
 #Endpoint para Cargo
-• (get) /cargo
+• (get) /cargo✅
 -> obtener todos los cargo  registrados
 
-• (get) /cargo /:id
--> obtener un cargo  enviando el id
+• (get) /cargo /:id✅
+-> obtener un cargo enviando el id
 
-• (get) /cargo/:id/empleado
+• (get) /cargo/:id/empleado✅
 -> obtiene todas los empleado enviando el id del cargo
 
-• (post) /cargo
+• (post) /cargo✅
 -> agrega un cargo nuevo
 
-• (post) /cargo/:id/empleado
+• (post) /cargo/:id/empleado✅
 -> agrega un registro nuevo de cargo usando el id del empleado para asociarlo
 
-• (put) /cargo  /:id
+• (put) /cargo  /:id✅
 -> actualiza la informacion del cargo  (solo el titulo y salario)
 
-• (delete) /cargo  
+• (delete) /cargo✅
 -> borra un cargo siempre y cuando no tenga empleado vinculados
 
 Endpoint para Salarios
