@@ -45,20 +45,20 @@ horas por el precio de hora del empleado
 • (put) /cargo  /:id✅
 -> actualiza la informacion del cargo  (solo el titulo y salario)
 
-• (delete) /cargo✅
+• (delete) /cargo/:id✅
 -> borra un cargo siempre y cuando no tenga empleado vinculados
 
 Endpoint para Salarios
-• (get) / salarios/cargo
--> obtener todos los salarios  por cargo
+• (get) / salarios/cargo✅
+-> obtener todos los salarios por cargo
 
-• (post) /salarios
--> agrega un cargo nuevo
+• (post) /salarios✅
+-> agrega un salario a un cargo 
 
-• (post) /salarios
--> agrega un registro nuevo de salarios  usando 
+• (post) /salarios✅
+-> agrega un registro nuevo de salario
 
-• (delete) / salarios    
+• (delete) / salarios✅  
 -> borra un salarios  siempre y cuando no tenga cargo vinculados
 
 #Endpoint para Ponche

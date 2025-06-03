@@ -23,6 +23,6 @@ router.post('/:id/empleado', CargoController.addCargoToEmployee)
 router.put('/:id', CargoController.updateCargoInfo)
 
 //borra un cargo siempre y cuando no tenga empleado vinculados
-router.delete('/', CargoController.deleteCargo)
+router.delete('/:id', CargoController.deleteCargo)
 
 export default router
