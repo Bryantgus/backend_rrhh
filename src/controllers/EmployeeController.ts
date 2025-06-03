@@ -22,6 +22,11 @@ export class EmployeeController {
         console.log("obtener un empleado enviando el id");
         try {
             const id = req.params.idEmployee
+            const employeeExists = await Employee.findByPk(id)
+            if (!employeeExists) {
+                res.status(404).json({ error: 'Empleado no encontrado' });
+                return
+            }
             const employee = await Employee.findByPk(id)
             res.json(employee)
         } catch (error) {
@@ -35,8 +40,8 @@ export class EmployeeController {
         try {
             const id = req.params.idEmployee
 
-            const employeeExists = await Employee.findByPk(id)
-            if (!employeeExists) {
+            const employeeExist = await Employee.findByPk(id)
+            if (!employeeExist) {
                 res.status(404).json({ error: 'Empleado no encontrado' });
                 return
             }
@@ -50,7 +55,7 @@ export class EmployeeController {
             const totalHoursCalculates = totalHoursJson.reduce((accum, current) => { return accum += current.hours }, 0)
 
             res.json({
-                employee: employeeExists.fullName,
+                employee: employeeExist.fullName,
                 totalDeHorasTrabajadas: totalHoursCalculates
             })
             return
@@ -72,10 +77,10 @@ export class EmployeeController {
             const fullName = req.body.fullName
             const employee = await Employee.create({ fullName: fullName })
             res.json({
-                message: {
-                    "Empleado Agregado Correctamente":
-                        employee
-                }
+                message: "Empleado Agregado Correctamente",
+                employee: employee
+
+
             })
         } catch (error) {
             // console.log(error);
@@ -114,15 +119,15 @@ export class EmployeeController {
         console.log("actualiza la informacion del empleado (solo el fullname y pricePerhours)")
         try {
             const id = req.params.idEmployee
-            const employeeExists = await Employee.findByPk(id)
-             if (!employeeExists) {
+            const employeeExist = await Employee.findByPk(id)
+            if (!employeeExist) {
                 res.status(404).json({ error: 'Empleado no encontrado' });
                 return
             }
             const newFullName = req.body.fullName
-            employeeExists.fullName = newFullName
-            await employeeExists.save()
-            res.json({message: "Nombre actualizado correctamente"})
+            employeeExist.fullName = newFullName
+            await employeeExist.save()
+            res.json({ message: "Nombre actualizado correctamente" })
 
 
         } catch (error) {
@@ -135,13 +140,13 @@ export class EmployeeController {
         console.log("borra un empleado y todo el registro de las horas trabajadas")
         try {
             const id = req.params.idEmployee
-            const employeeExists = await Employee.findByPk(id)
-             if (!employeeExists) {
+            const employeeExist = await Employee.findByPk(id)
+            if (!employeeExist) {
                 res.status(404).json({ error: 'Empleado no encontrado' });
                 return
             }
-            await employeeExists.destroy()
-            res.json({message: "Empleado eliminado correctamente"})
+            await employeeExist.destroy()
+            res.json({ message: "Empleado eliminado correctamente" })
 
 
         } catch (error) {
