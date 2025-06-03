@@ -63,16 +63,18 @@ Endpoint para Salarios
 
 #Endpoint para Ponche
 
-• (get) /ponches
+• (get) /ponches✅
 -> obtener todos los  ponche
 
-• (get) / ponche/empleado/:id
--> obtener el ponche enviando el id del empleado
+• (get) /ponche/:idEmployee✅
+-> obtener el ponche de un empleado por id
 
-• (get) /ponche/:id/empleado/:id
+• (get) /ponche/:id/empleado/:id✅
 -> obtiene las horas x ponche 
 
-• (post) /ponche/:ponche
+(ojo)
+• (post) /ponche/:ponche✅
+-> ponchar?
 
 #Endpoint para Account
 
