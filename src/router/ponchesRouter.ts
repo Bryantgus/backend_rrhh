@@ -7,11 +7,11 @@ const router = Router()
 router.get('/', PonchesController.getAll)
 
 //obtener el ponche enviando el id del empleado
-router.get('/:idEmployee', PonchesController.getPoncheEmployee)
+router.get('/employee/:idEmployee', PonchesController.getPoncheEmployee)
 
 // //obtiene las horas x ponche 
-router.get('/hours/:idEmployee/', PonchesController.getHoursxPonche)
+router.get('/ponche/:idPonche/empleado/:idEmployee', PonchesController.getHoursxPonche)
 
-router.post('/', PonchesController.ponchar)
+router.post('/idEmployee', PonchesController.ponchar)
 
 export default router

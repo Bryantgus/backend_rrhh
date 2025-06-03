@@ -66,7 +66,7 @@ Endpoint para Salarios
 • (get) /ponches✅
 -> obtener todos los  ponche
 
-• (get) /ponche/:idEmployee✅
+• (get) /ponche/employee/:idEmployee✅
 -> obtener el ponche de un empleado por id
 
 • (get) /ponche/:id/empleado/:id✅
@@ -78,22 +78,22 @@ Endpoint para Salarios
 
 #Endpoint para Account
 
-(post) /account/login
-(post) /account/register
+(post) /account/login✅
+(post) /account/register✅
 
 #Endpoint para Nomina
-• (get) /Nomina
+• (get) /nomina✅
 -> obtener todos las nominas
-• (get) / 
 
-#Nomina /empleado/:id
+• (get) /nomina/empleado/:id✅
 -> obtener las nominas del empleado enviando el id del empleado
-• (get) /
-Nomina  /:id/empleado/:id
--> obtiene una nomina en particular por empleado 
-• (post) /nomina/:
 
-nomina
+• (get) /Nomina/:id/empleado/:id✅
+-> obtiene una nomina en particular por empleado 
+
+• (post) /nomina/:nomina✅
+(ojo la db creara el id)
+
 Guarda la nomina
 •  para lograr esto crearemos varios tipos
 • Employee
