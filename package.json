@@ -12,7 +12,9 @@
   "description": "",
   "dependencies": {
     "colors": "^1.4.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@types/express": "^5.0.2",

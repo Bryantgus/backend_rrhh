@@ -5,10 +5,12 @@ import salarioRouter from './router/salariosRouter'
 import poncheRouter from './router/ponchesRouter'
 import accountRouter from './router/accountRouter'
 import nominaRouter from './router/nominaRouter'
+import connectToDatabase from './config/db'
 
 const app = express()
 
 app.use(express.json())
+connectToDatabase()
 
 app.use('/api/employee', employeeRouter)    
 app.use('/api/cargo', cargoTitleRouter)   
