@@ -2,20 +2,12 @@ import { Request, Response } from "express";
 import Employee from "../models/employee";
 import HoursEmployee from "../models/hoursEmployee";
 import Cargo from "../models/cargo";
-import Salario from "../models/salario";
 
 export class EmployeeController {
     static getAll = async (req: Request, res: Response) => {
         console.log("obtener todos los empleados registrados");
         try {
-            const employees = await Employee.findAll({
-                include: [
-                    {
-                        model: Cargo,
-                        include: [Salario]
-                    }
-                ]
-            })
+            const employees = await Employee.findAll()
             res.json(employees)
         } catch (error) {
             console.log(error);

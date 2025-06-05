@@ -1,6 +1,5 @@
 import { Table, Column, Model, DataType, HasMany, HasOne, AllowNull, ForeignKey, BelongsTo } from "sequelize-typescript";
 import Employee from "./employee";
-import Salario from "./salario";
 
 @Table({
     tableName: 'cargo'
@@ -13,12 +12,8 @@ class Cargo extends Model {
     @HasMany(() => Employee)
     declare employees: Employee[];
 
-    @ForeignKey(() => Salario)
-    @Column
-    declare salarioId: number;
-
-    @BelongsTo(() => Salario)
-    declare salario: Salario;
+    @Column(DataType.FLOAT)
+    declare salario: number;
 }
 
 export default Cargo;
