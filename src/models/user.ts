@@ -1,10 +1,10 @@
 import { Table, Column, Model, DataType, HasMany, Default, Unique, AllowNull, ForeignKey, BelongsTo } from "sequelize-typescript"
 
 @Table({
-    tableName: 'employee'
+    tableName: 'users'
 })
 
-class Employee extends Model {
+class Users extends Model {
     @AllowNull(false)
     @Column({
         type: DataType.TEXT
@@ -35,4 +35,4 @@ class Employee extends Model {
     
 }
 
-export default Employee
+export default Users
