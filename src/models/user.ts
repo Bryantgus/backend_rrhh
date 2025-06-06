@@ -1,15 +1,15 @@
 import { Table, Column, Model, DataType, HasMany, Default, Unique, AllowNull, ForeignKey, BelongsTo } from "sequelize-typescript"
 
 @Table({
-    tableName: 'users'
+    tableName: 'user'
 })
 
-class Users extends Model {
-    @AllowNull(false)
+class User extends Model {
+    
     @Column({
         type: DataType.TEXT
     })
-    declare user: string
+    declare fullName: string
 
     @Column({
         type: DataType.TEXT
@@ -19,15 +19,11 @@ class Users extends Model {
     @Column({
         type: DataType.TEXT
     })
-    declare name: string
+    declare cedula: string   
 
+    @AllowNull(true)
     @Column({
-        type: DataType.TEXT
-    })
-    declare lastName: string   
-
-    @Column({
-        type: DataType.TEXT
+        type: DataType.TEXT || null
     })
     declare token: string   
 
@@ -35,4 +31,4 @@ class Users extends Model {
     
 }
 
-export default Users
+export default User
