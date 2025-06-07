@@ -24,6 +24,11 @@ class Employee extends Model {
     @BelongsTo(() => Cargo)
     declare cargo: Cargo;
 
+    @Column({
+        type: DataType.TEXT
+    })
+    declare cedula: string 
+
 }
 
 export default Employee

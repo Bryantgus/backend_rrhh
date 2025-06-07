@@ -9,25 +9,12 @@ class User extends Model {
     @Column({
         type: DataType.TEXT
     })
-    declare fullName: string
+    declare user: string
 
     @Column({
         type: DataType.TEXT
     })
-    declare password: string
-
-    @Column({
-        type: DataType.TEXT
-    })
-    declare cedula: string   
-
-    @AllowNull(true)
-    @Column({
-        type: DataType.TEXT || null
-    })
-    declare token: string   
-
-    
+    declare password: string     
     
 }
 

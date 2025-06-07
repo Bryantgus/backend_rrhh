@@ -11,12 +11,6 @@ export const validationsInputRegister = async (req: Request, res: Response, next
             .isLength({ min: 8 })
             .withMessage("Tu Contraseña debe tener almenos 8 caracteres")
             .run(req),
-        body('fullName')
-            .notEmpty().withMessage('El nombre completo no puede ir vacio')
-            .run(req),
-        body('cedula')
-            .notEmpty().withMessage('La cedula no puede ir vacio')
-            .run(req),
     ])
 
     let errors = validationResult(req)

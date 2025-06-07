@@ -5,7 +5,9 @@ import { validationsInputRegister } from "../middleware/account"
 
 const router = Router()
 
-router.post('/login', AccountController.login)
+router.post('/login', 
+    validationsInputRegister,
+    AccountController.login)
 
 router.post('/register', 
     validationsInputRegister,
