@@ -71,14 +71,14 @@ export class EmployeeController {
     static addEmployee = async (req: Request, res: Response) => {
         console.log("agrega un empleado nuevo");
         try {
-            const fullName = req.body.fullName
-            const employee = await Employee.create({ fullName: fullName })
-            res.json({
-                message: "Empleado Agregado Correctamente",
-                employee: employee
-
-
-            })
+            const { fullName, cedula } = req.body
+            const cedulaExist = await Employee.findOne({ where: { cedula }})
+            if(cedulaExist) {
+                res.json("Empleado con esa cedula ya existe")
+                return
+            }
+            const employee = await Employee.create({ fullName: fullName, cedula: cedula })
+            res.json({employee})
         } catch (error) {
             // console.log(error);
             res.status(500).json({ error: 'Hubo un error' })

@@ -8,6 +8,8 @@ import connectToDatabase from './config/db'
 import { corsConfig } from './config/cors'
 import cors from 'cors'
 import { authenticate } from './middleware/auth'
+
+
 const app = express()
 
 app.use(express.json())

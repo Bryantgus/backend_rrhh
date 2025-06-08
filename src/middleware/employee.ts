@@ -25,7 +25,10 @@ export const validateEmployeeExist = async (req: Request, res: Response, next: N
 
 export const validatefullName = async (req: Request, res: Response, next: NextFunction) => {
     await body('fullName')
-            .notEmpty().withMessage('El nombre del empleado no puede ir vacio')
+        .notEmpty().withMessage('El nombre del empleado no puede ir vacio')
+        .run(req)
+        body('celuda')
+            .notEmpty().withMessage('La cedula del empleado no puede ir vacio')
             .run(req)
 
     let errors = validationResult(req)
