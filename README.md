@@ -1,5 +1,6 @@
 title: Crear un API para manejar un sistema de RRHH donde puedas tener horas pagadas a empleados, cargo, salario, nomina, login...  debe contener los siguientes endpoint
 
+postman colletion: https://.postman.co/workspace/My-Workspace~046eb3e5-fba7-47d0-8a2e-5ba539eedefc/collection/37495449-49eff890-212f-4aa1-93df-199d37ba2e12?action=share&creator=37495449
 #Endpoint para empleado
 • (get) /employees✅
 -> obtener todos los empleados registrados
